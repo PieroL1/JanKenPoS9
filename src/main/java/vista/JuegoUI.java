@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -144,7 +145,8 @@ public class JuegoUI extends JFrame implements Observer, ActionListener {
             String rutaIcono = "/imagenes/" + jugada.name().toLowerCase() + ".png";
             ImageIcon icono = new ImageIcon(getClass().getResource(rutaIcono));
             // Escalar icono si es necesario
-            Image img = icono.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+            Image img = resizeImage(icono.getImage(), 150, 150);
+
             boton.setIcon(new ImageIcon(img));
             boton.setVerticalTextPosition(SwingConstants.BOTTOM);
             boton.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -154,6 +156,16 @@ public class JuegoUI extends JFrame implements Observer, ActionListener {
         
         return boton;
     }
+    
+    private Image resizeImage(Image img, int width, int height) {
+    BufferedImage resizedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+    Graphics2D g2d = resizedImage.createGraphics();
+    g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+    g2d.drawImage(img, 0, 0, width, height, null);
+    g2d.dispose();
+    return resizedImage;
+}
+
     
     private void actualizarUI() {
         // Actualizar temporizador si hay partida en curso
