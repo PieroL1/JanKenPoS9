@@ -57,7 +57,7 @@ public class HistorialUI extends JDialog {
                 Partida p = historial.get(i);
                 sb.append("<div style='border:2px solid #444; border-radius:10px; padding:10px; margin-bottom:10px; background:#f9f9f9; box-shadow: 3px 3px 5px rgba(0,0,0,0.1);'>");
                 sb.append("<h2 style='color:#007BFF; font-size:22px;'>🔹 Partida #").append(i + 1).append("</h2>");
-                sb.append("<p style='font-size:18px;'><b>📅 Fecha:</b> ").append(sdf.format(p.getFecha())).append("</p>");
+                sb.append("<p style='font-size:18px;'><b>📅 Fecha: </b> ").append(sdf.format(p.getFecha())).append("</p>");
                 sb.append("<p style='font-size:16px;'><b>🏆 Jugador 1:</b> ").append(p.getJugador1()).append("</p>");
                 sb.append("<p style='font-size:16px;'><b>🏆 Jugador 2:</b> ").append(p.getJugador2()).append("</p>");
                 sb.append("<p style='font-size:16px; color:red;'><b>🔥 Resultado:</b> ").append(p.getResultado()).append("</p>");
