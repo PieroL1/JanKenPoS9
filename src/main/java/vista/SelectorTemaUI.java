@@ -28,7 +28,7 @@ public class SelectorTemaUI extends JPanel {
         
         gbc.gridy = 1;
         comboTemas = new JComboBox<>(temas);
-        comboTemas.setActionCommand("cambiarTema");
+        comboTemas.setActionCommand("cambiarTema"); 
         comboTemas.addActionListener(listener);
         comboTemas.setFont(new Font("Girassol", Font.PLAIN, 13));
         comboTemas.setBackground(new Color(30, 30, 30));
