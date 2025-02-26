@@ -18,7 +18,7 @@ public class JuegoViewModel extends Observable {
         mensajeResultado = "¡Bienvenido a Jan Ken Po!";
         turnoJugador2 = false;
         partidaEnCurso = false;
-        tiempoLimite = 5;  // 5 segundos por defecto
+        tiempoLimite = 60;  // 5 segundos por defecto
     }
     
     public void setModoMultijugador(boolean multijugador) {
